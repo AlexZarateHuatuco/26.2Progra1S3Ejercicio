@@ -42,7 +42,7 @@ namespace Progra1_S3_Ejercicios
             }
         }
 
-        public float DealtDamage()
+        public virtual float DealtDamage()
         {
             return this.damage;
         }

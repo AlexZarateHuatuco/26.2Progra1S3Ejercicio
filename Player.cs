@@ -6,50 +6,23 @@ using System.Threading.Tasks;
 
 namespace Progra1_S3_Ejercicios
 {
-    internal class Player
+    internal class Player : Character
     {
-        private float life;
-        private float damage;
-
-        public Player(float life, float damage)
+        public Player(float life, float damage) : base(life, damage)
         {
-            if (life > 100)
-            {
-                this.life = 100;
-            }
-            else
-            {
-                this.life = life;
-            }
-
-            if (damage > 100)
-            {
-                this.damage = 100;
-            }
-            else
-            {
-                this.damage = damage;
-            }
+            
         }
 
-        public void TakeDamage(float amount)
+        public override void TakeDamage(float amount)
         {
             this.life -= amount;
-            
-            if (this.life < 0)
-            {
-                this.life = 0;
-            }
+            Console.WriteLine($"[Jugador] ha recibido {amount} de daño. Vida restante {this.life}");
         }
 
-        public float DealtDamage()
+        public override float DealtDamage()
         {
+            Console.WriteLine($"[Jugador] hace el ataque con un daño de {this.damage}");
             return this.damage;
-        }
-
-        public bool IsAlive()
-        {
-            return this.life > 0;
         }
     }
 }
