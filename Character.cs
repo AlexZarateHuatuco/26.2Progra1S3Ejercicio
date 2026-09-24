@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Progra1_S3_Ejercicios
 {
-    internal abstract class Character
+    internal abstract class Character : IDamageable
     {
         protected float life;
         protected float damage;
